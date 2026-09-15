@@ -4,11 +4,7 @@ Control an iPad through a tiny USB input tool. A native iPad app shares its scre
 and forwards keyboard and mouse commands to a Seeed Studio XIAO RP2040, which
 plays them back as real USB HID input.
 
-## Demo
-
 ![iPad Computer Use demo](docs/demo.gif)
-
-[Download the full-resolution MP4](https://github.com/jamiepinheiro/ipad_computer_use/raw/refs/heads/main/docs/demo.mp4).
 
 ## Three components
 
