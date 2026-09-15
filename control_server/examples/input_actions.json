@@ -1,0 +1,6 @@
+[
+  {"type": "move", "dx": 80, "dy": 0},
+  {"type": "click", "button": "left"},
+  {"type": "wait", "ms": 500},
+  {"type": "keys", "sequence": "hello{ENTER}"}
+]

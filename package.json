@@ -1,0 +1,13 @@
+{
+  "name": "ipad_computer_use",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "workspaces": ["input_device", "control_server"],
+  "scripts": {
+    "test": "npm test --workspaces",
+    "release:check": "node control_server/scripts/check_release.js",
+    "release:pack": "node control_server/scripts/check_release.js --pack"
+  },
+  "engines": {"node": ">=20"}
+}

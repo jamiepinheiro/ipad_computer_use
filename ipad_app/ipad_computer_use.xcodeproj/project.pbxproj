@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A10000000000000000000030 /* ipad_computer_use_app.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000020 /* ipad_computer_use_app.swift */; };
+		A10000000000000000000031 /* RelayConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000021 /* RelayConnection.swift */; };
+		A10000000000000000000032 /* DongleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000022 /* DongleClient.swift */; };
+		B10000000000000000000030 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000020 /* SampleHandler.swift */; };
+		B10000000000000000000031 /* FrameCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000021 /* FrameCapture.swift */; };
+		B10000000000000000000032 /* RelayConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000021 /* RelayConnection.swift */; };
+		B10000000000000000000033 /* DongleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000022 /* DongleClient.swift */; };
+		B10000000000000000000034 /* SharedConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000024 /* SharedConfiguration.swift */; };
+		B10000000000000000000035 /* SharedConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10000000000000000000024 /* SharedConfiguration.swift */; };
+		B10000000000000000000053 /* Broadcast.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B10000000000000000000006 /* Broadcast.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C10000000000000000000030 /* CalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10000000000000000000020 /* CalibrationView.swift */; };
+		D10000000000000000000030 /* SetupStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10000000000000000000020 /* SetupStatus.swift */; };
+		E10000000000000000000030 /* SessionWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10000000000000000000020 /* SessionWidget.swift */; };
+		E10000000000000000000031 /* SessionActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10000000000000000000021 /* SessionActivity.swift */; };
+		E10000000000000000000032 /* SessionActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10000000000000000000021 /* SessionActivity.swift */; };
+		E10000000000000000000033 /* SessionActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10000000000000000000021 /* SessionActivity.swift */; };
+		E10000000000000000000053 /* SessionWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E10000000000000000000006 /* SessionWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F10000000000000000000002 /* app_icon.icon in Resources */ = {isa = PBXBuildFile; fileRef = F10000000000000000000001 /* app_icon.icon */; };
+		F20000000000000000000011 /* start_session_intent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000000000000000000001 /* start_session_intent.swift */; };
+		F20000000000000000000012 /* start_session_intent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000000000000000000001 /* start_session_intent.swift */; };
+		F20000000000000000000013 /* session_control.swift in Sources */ = {isa = PBXBuildFile; fileRef = F20000000000000000000002 /* session_control.swift */; };
+		F30000000000000000000002 /* Broadcast/broadcast_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F30000000000000000000001 /* Broadcast/broadcast_icon.png */; };
+		F40000000000000000000002 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F40000000000000000000001 /* PrivacyInfo.xcprivacy */; };
+		F40000000000000000000003 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F40000000000000000000001 /* PrivacyInfo.xcprivacy */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B10000000000000000000052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A10000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B10000000000000000000004;
+			remoteInfo = Broadcast;
+		};
+		E10000000000000000000052 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A10000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E10000000000000000000004;
+			remoteInfo = SessionWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B10000000000000000000050 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B10000000000000000000053 /* Broadcast.appex in Embed App Extensions */,
+				E10000000000000000000053 /* SessionWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		A10000000000000000000006 /* ipad_computer_use.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = ipad_computer_use.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A10000000000000000000020 /* ipad_computer_use_app.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ipad_computer_use_app.swift; sourceTree = "<group>"; };
+		A10000000000000000000021 /* RelayConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayConnection.swift; sourceTree = "<group>"; };
+		A10000000000000000000022 /* DongleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DongleClient.swift; sourceTree = "<group>"; };
+		A10000000000000000000023 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B10000000000000000000006 /* Broadcast.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; path = Broadcast.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10000000000000000000020 /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
+		B10000000000000000000021 /* FrameCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameCapture.swift; sourceTree = "<group>"; };
+		B10000000000000000000023 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B10000000000000000000024 /* SharedConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedConfiguration.swift; sourceTree = "<group>"; };
+		C10000000000000000000020 /* CalibrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationView.swift; sourceTree = "<group>"; };
+		D10000000000000000000020 /* SetupStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupStatus.swift; sourceTree = "<group>"; };
+		E10000000000000000000006 /* SessionWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; path = SessionWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		E10000000000000000000020 /* SessionWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionWidget.swift; sourceTree = "<group>"; };
+		E10000000000000000000021 /* SessionActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionActivity.swift; sourceTree = "<group>"; };
+		E10000000000000000000023 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F10000000000000000000001 /* app_icon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.icon; path = app_icon.icon; sourceTree = "<group>"; };
+		F20000000000000000000001 /* start_session_intent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = start_session_intent.swift; sourceTree = "<group>"; };
+		F20000000000000000000002 /* session_control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = session_control.swift; sourceTree = "<group>"; };
+		F30000000000000000000001 /* Broadcast/broadcast_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Broadcast/broadcast_icon.png; sourceTree = SOURCE_ROOT; };
+		F40000000000000000000001 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A10000000000000000000008 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B10000000000000000000008 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E10000000000000000000008 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A10000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000005 /* ipad_computer_use */,
+				B10000000000000000000005 /* Broadcast */,
+				A10000000000000000000003 /* Products */,
+				E10000000000000000000005 /* SessionWidget */,
+				C6C8BBFF3059B301009526C4 /* Recovered References */,
+			);
+			sourceTree = "<group>";
+		};
+		A10000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A10000000000000000000006 /* ipad_computer_use.app */,
+				B10000000000000000000006 /* Broadcast.appex */,
+				E10000000000000000000006 /* SessionWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A10000000000000000000005 /* ipad_computer_use */ = {
+			isa = PBXGroup;
+			children = (
+				F20000000000000000000001 /* start_session_intent.swift */,
+				F10000000000000000000001 /* app_icon.icon */,
+				A10000000000000000000020 /* ipad_computer_use_app.swift */,
+				A10000000000000000000021 /* RelayConnection.swift */,
+				A10000000000000000000022 /* DongleClient.swift */,
+				A10000000000000000000023 /* Info.plist */,
+				B10000000000000000000024 /* SharedConfiguration.swift */,
+				C10000000000000000000020 /* CalibrationView.swift */,
+				D10000000000000000000020 /* SetupStatus.swift */,
+				E10000000000000000000021 /* SessionActivity.swift */,
+			);
+			path = ipad_computer_use;
+			sourceTree = "<group>";
+		};
+		B10000000000000000000005 /* Broadcast */ = {
+			isa = PBXGroup;
+			children = (
+				B10000000000000000000020 /* SampleHandler.swift */,
+				B10000000000000000000021 /* FrameCapture.swift */,
+				B10000000000000000000023 /* Info.plist */,
+			);
+			path = Broadcast;
+			sourceTree = "<group>";
+		};
+		C6C8BBFF3059B301009526C4 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F40000000000000000000001 /* PrivacyInfo.xcprivacy */,
+				F30000000000000000000001 /* Broadcast/broadcast_icon.png */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		E10000000000000000000005 /* SessionWidget */ = {
+			isa = PBXGroup;
+			children = (
+				F20000000000000000000002 /* session_control.swift */,
+				E10000000000000000000020 /* SessionWidget.swift */,
+				E10000000000000000000023 /* Info.plist */,
+			);
+			path = SessionWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A10000000000000000000004 /* ipad_computer_use */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A10000000000000000000011 /* Build configuration list for PBXNativeTarget "ipad_computer_use" */;
+			buildPhases = (
+				A10000000000000000000007 /* Sources */,
+				A10000000000000000000008 /* Frameworks */,
+				A10000000000000000000009 /* Resources */,
+				B10000000000000000000050 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B10000000000000000000051 /* PBXTargetDependency */,
+				E10000000000000000000051 /* PBXTargetDependency */,
+			);
+			name = ipad_computer_use;
+			productName = ipad_computer_use;
+			productReference = A10000000000000000000006 /* ipad_computer_use.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B10000000000000000000004 /* Broadcast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B10000000000000000000011 /* Build configuration list for PBXNativeTarget "Broadcast" */;
+			buildPhases = (
+				B10000000000000000000007 /* Sources */,
+				B10000000000000000000008 /* Frameworks */,
+				F30000000000000000000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Broadcast;
+			productName = Broadcast;
+			productReference = B10000000000000000000006 /* Broadcast.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		E10000000000000000000004 /* SessionWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E10000000000000000000011 /* Build configuration list for PBXNativeTarget "SessionWidget" */;
+			buildPhases = (
+				E10000000000000000000007 /* Sources */,
+				E10000000000000000000008 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SessionWidget;
+			productName = SessionWidget;
+			productReference = E10000000000000000000006 /* SessionWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A10000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 2600;
+			};
+			buildConfigurationList = A10000000000000000000010 /* Build configuration list for PBXProject "ipad_computer_use" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A10000000000000000000002;
+			productRefGroup = A10000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A10000000000000000000004 /* ipad_computer_use */,
+				B10000000000000000000004 /* Broadcast */,
+				E10000000000000000000004 /* SessionWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A10000000000000000000009 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F10000000000000000000002 /* app_icon.icon in Resources */,
+				F40000000000000000000002 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F30000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F30000000000000000000002 /* Broadcast/broadcast_icon.png in Resources */,
+				F40000000000000000000003 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A10000000000000000000007 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F20000000000000000000011 /* start_session_intent.swift in Sources */,
+				A10000000000000000000030 /* ipad_computer_use_app.swift in Sources */,
+				A10000000000000000000031 /* RelayConnection.swift in Sources */,
+				A10000000000000000000032 /* DongleClient.swift in Sources */,
+				B10000000000000000000034 /* SharedConfiguration.swift in Sources */,
+				C10000000000000000000030 /* CalibrationView.swift in Sources */,
+				D10000000000000000000030 /* SetupStatus.swift in Sources */,
+				E10000000000000000000031 /* SessionActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B10000000000000000000007 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B10000000000000000000030 /* SampleHandler.swift in Sources */,
+				B10000000000000000000031 /* FrameCapture.swift in Sources */,
+				B10000000000000000000032 /* RelayConnection.swift in Sources */,
+				B10000000000000000000033 /* DongleClient.swift in Sources */,
+				B10000000000000000000035 /* SharedConfiguration.swift in Sources */,
+				E10000000000000000000032 /* SessionActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E10000000000000000000007 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F20000000000000000000012 /* start_session_intent.swift in Sources */,
+				F20000000000000000000013 /* session_control.swift in Sources */,
+				E10000000000000000000030 /* SessionWidget.swift in Sources */,
+				E10000000000000000000033 /* SessionActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B10000000000000000000051 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B10000000000000000000004 /* Broadcast */;
+			targetProxy = B10000000000000000000052 /* PBXContainerItemProxy */;
+		};
+		E10000000000000000000051 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E10000000000000000000004 /* SessionWidget */;
+			targetProxy = E10000000000000000000052 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A10000000000000000000040 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				KEY_RELAY_BUNDLE_ID = org.example.ipadcontrol;
+				SDKROOT = iphoneos;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A10000000000000000000041 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				KEY_RELAY_BUNDLE_ID = org.example.ipadcontrol;
+				SDKROOT = iphoneos;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		A10000000000000000000042 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APP_ENTITLEMENTS = ipad_computer_use/Shared.entitlements;
+				APS_ENVIRONMENT = development;
+				ASSETCATALOG_COMPILER_APPICON_NAME = app_icon;
+				CODE_SIGN_ENTITLEMENTS = "$(APP_ENTITLEMENTS)";
+				CODE_SIGN_STYLE = Automatic;
+
+				INFOPLIST_FILE = ipad_computer_use/Info.plist;
+				LIVE_ACTIVITY_PUSH_ENABLED = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(KEY_RELAY_BUNDLE_ID)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		A10000000000000000000043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APP_ENTITLEMENTS = ipad_computer_use/app.entitlements;
+				APS_ENVIRONMENT = production;
+				ASSETCATALOG_COMPILER_APPICON_NAME = app_icon;
+				CODE_SIGN_ENTITLEMENTS = "$(APP_ENTITLEMENTS)";
+				CODE_SIGN_STYLE = Automatic;
+
+				INFOPLIST_FILE = ipad_computer_use/Info.plist;
+				LIVE_ACTIVITY_PUSH_ENABLED = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "$(KEY_RELAY_BUNDLE_ID)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		B10000000000000000000042 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ipad_computer_use/Shared.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Broadcast/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(KEY_RELAY_BUNDLE_ID).broadcast";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		B10000000000000000000043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = ipad_computer_use/Shared.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Broadcast/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(KEY_RELAY_BUNDLE_ID).broadcast";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		E10000000000000000000042 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SessionWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(KEY_RELAY_BUNDLE_ID).session";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		E10000000000000000000043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SessionWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "$(KEY_RELAY_BUNDLE_ID).session";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A10000000000000000000010 /* Build configuration list for PBXProject "ipad_computer_use" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10000000000000000000040 /* Debug */,
+				A10000000000000000000041 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A10000000000000000000011 /* Build configuration list for PBXNativeTarget "ipad_computer_use" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A10000000000000000000042 /* Debug */,
+				A10000000000000000000043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B10000000000000000000011 /* Build configuration list for PBXNativeTarget "Broadcast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B10000000000000000000042 /* Debug */,
+				B10000000000000000000043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E10000000000000000000011 /* Build configuration list for PBXNativeTarget "SessionWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E10000000000000000000042 /* Debug */,
+				E10000000000000000000043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A10000000000000000000001 /* Project object */;
+}

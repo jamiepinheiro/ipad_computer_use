@@ -1,0 +1,12 @@
+{
+  "coordinateSpace": {"width": 1280, "height": 960, "units": "screen_pixels"},
+  "pointer": {"x": 400, "y": 300},
+  "actions": [
+    {"type": "press", "keys": {"modifiers": ["cmd"], "key": "space"}},
+    {"type": "wait", "ms": 500},
+    {"type": "type_text", "text": "Notes"},
+    {"type": "press", "keys": {"key": "enter"}},
+    {"type": "click", "x": 500, "y": 300, "button": "left"}
+  ],
+  "delay": 0
+}

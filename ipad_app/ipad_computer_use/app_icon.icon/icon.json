@@ -1,0 +1,20 @@
+{
+  "fill": { "automatic-gradient": "srgb:0.03529,0.58039,0.53333,1.00000" },
+  "groups": [
+    {
+      "layers": [
+        { "image-name": "input_port.svg", "name": "Input port" }
+      ],
+      "shadow": { "kind": "neutral", "opacity": 0.35 },
+      "translucency": { "enabled": true, "value": 0.35 }
+    },
+    {
+      "layers": [
+        { "image-name": "pointer.svg", "name": "Pointer" }
+      ],
+      "shadow": { "kind": "neutral", "opacity": 0.5 },
+      "translucency": { "enabled": true, "value": 0.1 }
+    }
+  ],
+  "supported-platforms": { "squares": "shared" }
+}

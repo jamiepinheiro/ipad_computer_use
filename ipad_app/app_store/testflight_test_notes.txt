@@ -1,0 +1,7 @@
+This build is for iPad only and requires custom hardware for end-to-end testing.
+
+Use a USB-C iPad with a Seeed Studio XIAO RP2040 flashed with the project's Input Tool firmware. A stock board is not sufficient. Connect a reachable control server configured for that input device. The LED matrix is optional and not required for testing.
+
+Test first-launch onboarding, server URL editing, Back navigation, connection indicators, screen-sharing consent, automatic pointer calibration, and ending a session. With the hardware attached and the session active, use a controller to type "hello" in a blank Notes document and request a screenshot. Confirm pointer calibration finishes successfully before testing coordinate clicks.
+
+Do not use sensitive content during testing: screen content is sent to your configured control server. Stop the session when finished; unplug the input tool if input shutdown cannot be confirmed.

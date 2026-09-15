@@ -1,0 +1,7 @@
+{
+  "keyPath": "/absolute/path/to/AuthKey_YOUR_KEY_ID.p8",
+  "keyID": "YOUR_KEY_ID",
+  "teamID": "YOUR_TEAM_ID",
+  "bundleID": "com.yourcompany.ipadcontrol",
+  "environment": "sandbox"
+}

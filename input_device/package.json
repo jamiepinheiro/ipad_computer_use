@@ -1,0 +1,12 @@
+{
+  "name": "ipad_input_device",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "description": "RP2040 input tool firmware and its low-level HID protocol codec",
+  "bin": {"encode_input_actions": "scripts/encode_actions.js"},
+  "exports": {"./actions": "./protocol/actions.js"},
+  "files": ["protocol", "firmware", "libraries", "scripts", "README.md", "PROTOCOL.md"],
+  "scripts": {"test": "node --test test/*.test.js", "test:firmware": "bash scripts/test.sh", "build": "bash scripts/build.sh"},
+  "engines": {"node": ">=20"}
+}

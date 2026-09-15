@@ -1,0 +1,11 @@
+{
+  "name": "ipad_control_server",
+  "private": true,
+  "license": "MIT",
+  "version": "0.1.0",
+  "description": "Session-aware control server for iPad computer use",
+  "files": ["*.js", "calibration/*.js", "examples", "README.md", "PROTOCOL.md"],
+  "scripts": {"start": "node server.js", "start:background": "node start.js", "calibration": "node calibration/server.js", "calibration:background": "node calibration/start.js", "mcp": "node mcp_server.js", "mcp:background": "node mcp_start.js", "client": "node client.js", "test": "node --test test/*.test.js calibration/*.test.js"},
+  "dependencies": {"ipad_input_device": "file:../input_device", "ws": "8.21.3"},
+  "engines": {"node": ">=20"}
+}

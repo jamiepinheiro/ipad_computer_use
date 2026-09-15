@@ -1,0 +1,20 @@
+iPad-only app. End-to-end testing requires custom external hardware and a control server.
+
+Required hardware: a USB-C iPad and a Seeed Studio XIAO RP2040 connected to the iPad with a data-capable USB cable. The XIAO must be flashed with this project's Input Tool firmware. An unmodified retail XIAO will not work. The LED matrix is not required.
+
+The hardware presents USB keyboard/mouse input and a USB network interface. The app sends input commands to the hardware at 172.31.254.1. The hardware generates the keyboard and pointer events; the app does not directly inject system input through private iPadOS APIs.
+
+Required service: a configured control server reachable from the iPad and a controller client. The server and input device must use matching input-device credentials. A private-network server also requires network access for the reviewer. A public internet endpoint must not expose the unauthenticated control services.
+
+Test sequence:
+1. Connect the pre-flashed input device to the iPad.
+2. Open the app and complete the input-tool check.
+3. Enter the review control-server URL.
+4. Start pointer calibration and approve Apple's Screen Broadcast confirmation. Keep the app visible and do not touch the pointer while calibration runs.
+5. After calibration succeeds, open Notes and focus a new note. Use the connected controller to send "hello". The hardware types into the focused note.
+6. Request a screenshot through the controller. The app's ReplayKit broadcast extension supplies screen content during the user-approved session.
+7. End the session in the app or stop broadcasting using iPadOS.
+
+Without the flashed hardware, the input-tool onboarding check cannot complete. Full calibration, input playback, and the normal end-to-end session workflow cannot be tested with the app alone.
+
+Review access details and hardware delivery/demo arrangements must be supplied before submission. No reviewer hardware shipment, review server, credentials, or demonstration video has been arranged in these notes.
