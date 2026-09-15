@@ -40,9 +40,8 @@ These commands run on the host physically connected to the board, not on a
 remote control server. They type `abc` into the focused field after one second:
 
 ```sh
-SECRET=$(node -e 'process.stdout.write(require("./control_server/config").readInputDeviceSecret())')
 curl -fsS http://172.31.254.1/input \
-  -H "X-Input-Device-Secret: $SECRET" -H 'Content-Type: text/plain' \
+  -H "X-Input-Device-Secret: $INPUT_DEVICE_SECRET" -H 'Content-Type: text/plain' \
   --data-binary "$(node input_device/scripts/encode_actions.js '[
     {"type":"wait","ms":1000},
     {"type":"keys","sequence":"abc"}
@@ -53,7 +52,7 @@ For a relative movement of +10, +10 HID counts:
 
 ```sh
 curl -fsS http://172.31.254.1/input \
-  -H "X-Input-Device-Secret: $SECRET" -H 'Content-Type: text/plain' \
+  -H "X-Input-Device-Secret: $INPUT_DEVICE_SECRET" -H 'Content-Type: text/plain' \
   --data-binary "$(node input_device/scripts/encode_actions.js '[{"type":"move","dx":10,"dy":10}]')"
 ```
 
