@@ -6,9 +6,9 @@ plays them back as real USB HID input.
 
 ## Demo
 
-[![iPad Computer Use video demo](docs/demo-preview.jpg)](docs/demo.mp4)
+![iPad Computer Use demo](docs/demo.gif)
 
-[Watch the 22-second demo](docs/demo.mp4).
+[Download the full-resolution MP4](https://github.com/jamiepinheiro/ipad_computer_use/raw/refs/heads/main/docs/demo.mp4).
 
 ## Three components
 

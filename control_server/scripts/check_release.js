@@ -9,8 +9,8 @@ const assetDirectories = ['docs'];
 const rootFiles = ['.gitignore', 'README.md', 'SECURITY.md', 'THIRD_PARTY.md', 'package.json', 'package-lock.json', 'LICENSE'];
 const excluded = new Set(['.tools', '.state', '.local', 'build', 'exports', 'node_modules', '__pycache__', 'xcuserdata', '.signing.env', '.DS_Store']);
 const generated = new Set(['GeneratedSecret.h', 'WebAssets.h']);
-const allowedBinary = new Set(['ipad_app/Broadcast/broadcast_icon.png', 'docs/demo.mp4', 'docs/demo-preview.jpg']);
-const forbidden = /\.(uf2|elf|bin|pyc|jpg|jpeg|png|mp4|mov|tgz|p12|p8|pem|mobileprovision|xcuserstate)$/i;
+const allowedBinary = new Set(['ipad_app/Broadcast/broadcast_icon.png', 'docs/demo.mp4', 'docs/demo-preview.jpg', 'docs/demo.gif']);
+const forbidden = /\.(uf2|elf|bin|pyc|jpg|jpeg|png|gif|mp4|mov|tgz|p12|p8|pem|mobileprovision|xcuserstate)$/i;
 const files = [];
 function walk(relative) {
   const full = path.join(root, relative);
