@@ -240,18 +240,20 @@ private struct CalibrationSurface: UIViewRepresentable {
         return view
     }
     func updateUIView(_ view: PointerSurface, context: Context) {
+        view.calibrating = connection.running
         view.target = connection.target; view.pointer = connection.pointer
         view.lastClick = connection.lastClick; view.setNeedsDisplay()
     }
     static func dismantleUIView(_ view: PointerSurface, coordinator: ()) { view.detachHover() }
 }
 
-private final class PointerSurface: UIView {
+private final class PointerSurface: UIView, UIGestureRecognizerDelegate {
     var onSize: ((CGSize) -> Void)?
     var onPointer: ((CGPoint, Bool) -> Void)?
     var target: CGPoint?
     var pointer: CGPoint?
     var lastClick: CGPoint?
+    var calibrating = false
     private weak var hoverWindow: UIWindow?
     private lazy var hover = UIHoverGestureRecognizer(target: self, action: #selector(hovered(_:)))
     override init(frame: CGRect) {
@@ -260,7 +262,9 @@ private final class PointerSurface: UIView {
         hover.allowedTouchTypes = [NSNumber(value: UITouch.TouchType.indirectPointer.rawValue)]
         hover.cancelsTouchesInView = false
         let click = UITapGestureRecognizer(target: self, action: #selector(clicked(_:)))
-        click.allowedTouchTypes = [NSNumber(value: UITouch.TouchType.indirectPointer.rawValue)]
+        // AssistiveTouch can translate the mouse button into a direct touch.
+        click.allowedTouchTypes = [UITouch.TouchType.indirectPointer, .direct].map { NSNumber(value: $0.rawValue) }
+        click.delegate = self
         addGestureRecognizer(click)
     }
     required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
@@ -270,14 +274,38 @@ private final class PointerSurface: UIView {
         // Observe the header too, so clicking Start gives us a current pointer origin.
         hoverWindow = window; window?.addGestureRecognizer(hover)
     }
-    func detachHover() { hoverWindow?.removeGestureRecognizer(hover); hoverWindow = nil }
+    func detachHover() {
+        hoverWindow?.removeGestureRecognizer(hover); hoverWindow = nil
+    }
     override func layoutSubviews() { super.layoutSubviews(); onSize?(bounds.size); setNeedsDisplay() }
     @objc private func hovered(_ recognizer: UIHoverGestureRecognizer) {
         let point = recognizer.location(in: self)
-        if (recognizer.state == .began || recognizer.state == .changed) && bounds.contains(point) { onPointer?(point, false) }
+        if (recognizer.state == .began || recognizer.state == .changed) && bounds.contains(point) {
+            onPointer?(point, false)
+        }
+    }
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        let point = touch.location(in: self)
+        let accepted: Bool
+        switch touch.type {
+        case .indirectPointer:
+            accepted = true
+        case .direct:
+            accepted = CalibrationClickPolicy.acceptsDirectTouch(
+                running: calibrating, hasTarget: target != nil)
+        default:
+            accepted = false
+        }
+        NSLog("Calibration touch type=%ld accepted=%d assistive=%d running=%d target=%d x=%.2f y=%.2f",
+              touch.type.rawValue, accepted ? 1 : 0, UIAccessibility.isAssistiveTouchRunning ? 1 : 0,
+              calibrating ? 1 : 0, target != nil ? 1 : 0, Double(point.x), Double(point.y))
+        return accepted && bounds.contains(point)
     }
     @objc private func clicked(_ recognizer: UITapGestureRecognizer) {
-        if recognizer.state == .ended { onPointer?(recognizer.location(in: self), true) }
+        if recognizer.state == .ended {
+            NSLog("Calibration tap recognized")
+            onPointer?(recognizer.location(in: self), true)
+        }
     }
     override func draw(_ rect: CGRect) {
         guard let c = UIGraphicsGetCurrentContext() else { return }

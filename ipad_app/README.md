@@ -19,9 +19,10 @@ input device and server, not the real iPad.
 
 ## Build and install
 
-Use macOS with full Xcode and its command-line tools. The project targets iPad,
-with a deployment target of iPadOS 17; physical testing has used iPadOS 26 on an
-M-series iPad. Support on older iPadOS versions is not physically verified.
+Use macOS with full Xcode and its command-line tools. The project targets iPad
+and iPhone, with a deployment target of iOS/iPadOS 17. Physical testing has used
+an M-series iPad on iPadOS 26 and an iPhone 17 Pro. Support on older OS versions
+is not physically verified. The app name remains iPad Computer Use.
 
 From the repository root:
 
@@ -39,6 +40,10 @@ bash ipad_app/scripts/build.sh -allowProvisioningUpdates
 xcrun devicectl list devices
 bash ipad_app/scripts/install.sh YOUR_IPAD_DEVICE_ID
 ```
+
+For iPhone, substitute its device ID in the install command. Before calibration,
+follow [iPhone setup](../README.md#iphone-setup) to enable AssistiveTouch and map
+the XIAO's Button 1 to Single-Tap. That guide includes a screenshot of the mapping.
 
 Pair and trust the device, enable Developer Mode, and keep it unlocked during
 installation. The app needs a valid Apple provisioning profile; this repository

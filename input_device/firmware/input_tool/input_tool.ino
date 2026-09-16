@@ -38,6 +38,12 @@ uint32_t deadline = 0;
 const char *state = "idle";
 uint32_t lightErrorAt = 0, lightSuccessAt = 0;
 bool lightError = false, lightSuccess = false;
+const uint32_t bootPollMs = 5;
+const uint32_t bootDebounceMs = 30;
+const uint32_t bootClickMs = 15;
+bool bootRaw = false, bootStable = false, bootConsumed = false;
+bool bootReleasePending = false;
+uint32_t bootChangedAt = 0, bootNextPollAt = 0, bootReleaseAt = 0;
 
 void setLight(Light color) {
   static int previous = -1;
@@ -75,8 +81,42 @@ void stopKeys() {
   Keyboard.releaseAll();
   pointer.report(0);
   pointerButtons = 0;
+  bootReleasePending = false;
   running = held = false;
   state = "stopped";
+}
+
+void pollBootClick() {
+  uint32_t now = millis();
+  if (int32_t(now - bootNextPollAt) < 0) return;
+  bootNextPollAt = now + bootPollMs;
+
+  if (bootReleasePending && int32_t(now - bootReleaseAt) >= 0 && tud_hid_ready()) {
+    pointer.report(0);
+    pointerButtons = 0;
+    bootReleasePending = false;
+  }
+
+  bool raw = (bool)BOOTSEL;
+  if (raw != bootRaw) {
+    bootRaw = raw;
+    bootChangedAt = now;
+  }
+  if (uint32_t(now - bootChangedAt) < bootDebounceMs || raw == bootStable) return;
+
+  bootStable = raw;
+  if (!bootStable) {
+    bootConsumed = false;
+    return;
+  }
+
+  if (bootConsumed) return;
+  bootConsumed = true;
+  if (running || held || pointerButtons || !tud_hid_ready()) return;
+  pointer.report(MOUSE_LEFT);
+  pointerButtons = MOUSE_LEFT;
+  bootReleasePending = true;
+  bootReleaseAt = now + bootClickMs;
 }
 
 void reply(int code, const String &body) {
@@ -177,6 +217,7 @@ void loop() {
     stopKeys();
     lightError = true; lightErrorAt = millis();
   }
+  pollBootClick();
   // Never enter the HTTP parser while a physical key is held.
   if (!held && !pointerButtons) server.handleClient();
   updateLight();

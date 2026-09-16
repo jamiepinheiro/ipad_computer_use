@@ -4,6 +4,9 @@ Control an iPad through a tiny USB input tool. A native iPad app shares its scre
 and forwards keyboard and mouse commands to a Seeed Studio XIAO RP2040, which
 plays them back as real USB HID input.
 
+USB-C iPhones are also supported; see [iPhone setup](#iphone-setup) for the
+additional AssistiveTouch configuration. The app is still named iPad Computer Use.
+
 ![iPad Computer Use demo](docs/demo.gif)
 
 ## Three components
@@ -49,8 +52,8 @@ callers should use the high-level schema.
 
 ## Quickstart
 
-You need a **Seeed Studio XIAO RP2040**, a USB data cable, and an iPad.
-The tested device is an M-series iPad on iPadOS 26. Development needs Node.js 20+
+You need a **Seeed Studio XIAO RP2040**, a USB data cable, and an iPad or USB-C iPhone.
+Physical testing has used an M-series iPad and an iPhone 17 Pro. Development needs Node.js 20+
 and npm; firmware builds need Arduino CLI. Building/installing the iPad app
 requires macOS, full Xcode with command-line tools, and Apple signing credentials.
 You do not need to open the Xcode UI.
@@ -111,6 +114,8 @@ bash ipad_app/scripts/install.sh YOUR_IPAD_DEVICE_ID
 
 The iPad must be paired, unlocked, and in Developer Mode. Installation can use
 the paired wireless connection. [App setup and signing](ipad_app/README.md)
+For iPhone, use its device ID in the same install command, then complete
+[iPhone setup](#iphone-setup) before pointer calibration.
 
 ### 5. Start a session
 
@@ -148,6 +153,36 @@ Set `MCP_HOST=TAILSCALE_IP` and `MCP_ALLOW_TAILNET=1` for that mode. The MCP
 adapter has no MCP-layer auth. Run the control server on a trusted host or
 behind a private transport such as Tailscale or OpenAI Secure MCP Tunnel. There
 is intentionally no app-layer pairing password.
+
+## iPhone setup
+
+Use the same firmware, control server, and app as for iPad. Before running the
+app's pointer calibration:
+
+1. Connect the flashed XIAO to the iPhone using a USB data cable. Keep Wi-Fi connected for access to the control server.
+2. Open **Settings > Accessibility > Touch > AssistiveTouch** and turn **AssistiveTouch on**. Leave it enabled while using mouse input.
+3. Under **Devices**, select **XIAO RP2040**, then **Customize Additional Buttons...**.
+4. When asked to press a button on the pointer device, briefly press the XIAO's **BOOT** button while it is already connected and idle. The current firmware emits a left mouse click. Do not press RESET or hold BOOT while connecting; that enters the flashing workflow instead.
+5. Assign **Button 1** to **Single-Tap**, as shown below. If Button 1 is already listed, edit its action directly.
+
+<img src="docs/iphone_assistive_touch.png" alt="iPhone AssistiveTouch settings for XIAO RP2040, with Button 1 assigned to Single-Tap" width="360">
+
+Apple's [AssistiveTouch guide](https://support.apple.com/en-gb/111794) provides
+additional accessibility setup details.
+
+Return to **iPad Computer Use**, enter your control server URL, and complete
+pointer calibration. Confirm Apple's **Start Broadcast** prompt when asked.
+Keep the calibration screen open and **do not touch the screen or press BOOT
+during calibration**: AssistiveTouch delivers mouse clicks as touch events, so
+manual taps can interfere with the measurements. Calibration automatically
+moves the pointer, checks six target clicks, and saves the resulting profile
+on the control server.
+
+If the pointer moves but clicks fail, check both that AssistiveTouch is enabled
+and that **Button 1 = Single-Tap**, then retry with the latest app build. If
+Safari can open `http://172.31.254.1/status` but the app cannot reach the input
+tool, check the app's **Local Network** permission under **Settings > Privacy &
+Security > Local Network**.
 
 ## Development
 

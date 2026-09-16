@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C20000000000000000000030 = {isa = PBXBuildFile; fileRef = C20000000000000000000020; };
 		A10000000000000000000030 /* ipad_computer_use_app.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000020 /* ipad_computer_use_app.swift */; };
 		A10000000000000000000031 /* RelayConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000021 /* RelayConnection.swift */; };
 		A10000000000000000000032 /* DongleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10000000000000000000022 /* DongleClient.swift */; };
@@ -66,6 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C20000000000000000000020 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ipad_computer_use/calibration_click_policy.swift; sourceTree = SOURCE_ROOT; };
 		A10000000000000000000006 /* ipad_computer_use.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = ipad_computer_use.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A10000000000000000000020 /* ipad_computer_use_app.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ipad_computer_use_app.swift; sourceTree = "<group>"; };
 		A10000000000000000000021 /* RelayConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelayConnection.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				A10000000000000000000032 /* DongleClient.swift in Sources */,
 				B10000000000000000000034 /* SharedConfiguration.swift in Sources */,
 				C10000000000000000000030 /* CalibrationView.swift in Sources */,
+				C20000000000000000000030 /* calibration_click_policy.swift in Sources */,
 				D10000000000000000000030 /* SetupStatus.swift in Sources */,
 				E10000000000000000000031 /* SessionActivity.swift in Sources */,
 			);
@@ -385,7 +388,7 @@
 				LIVE_ACTIVITY_PUSH_ENABLED = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(KEY_RELAY_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -402,7 +405,7 @@
 				LIVE_ACTIVITY_PUSH_ENABLED = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "$(KEY_RELAY_BUNDLE_ID)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -421,7 +424,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(KEY_RELAY_BUNDLE_ID).broadcast";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -440,7 +443,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(KEY_RELAY_BUNDLE_ID).broadcast";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -458,7 +461,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(KEY_RELAY_BUNDLE_ID).session";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -476,7 +479,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "$(KEY_RELAY_BUNDLE_ID).session";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
