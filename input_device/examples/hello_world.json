@@ -1,0 +1,14 @@
+[
+  {
+    "type": "keys",
+    "sequence": "# hello world"
+  },
+  {
+    "type": "wait",
+    "ms": 750
+  },
+  {
+    "type": "keys",
+    "sequence": " these key presses are being simulated!"
+  }
+]

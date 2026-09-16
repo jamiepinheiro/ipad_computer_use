@@ -86,6 +86,12 @@ void reply(int code, const String &body) {
   server.send(code, "application/json", body);
 }
 
+void emptyReply(int code) {
+  server.sendHeader("Cache-Control", "no-store");
+  server.sendHeader("X-Content-Type-Options", "nosniff");
+  server.send(code, "text/plain", "");
+}
+
 bool authorized() {
   if (server.header("X-Input-Device-Secret") != INPUT_DEVICE_SECRET) {
     reply(403, "{\"error\":\"Input device secret required.\"}");
@@ -111,7 +117,7 @@ void runInput() {
   count=n;cursor=0;held=false;running=true;state="queued";
   startsAt=nextAt=millis();
   deadline=millis()+70000;
-  reply(202,"{\"accepted\":true}");
+  emptyReply(202);
 }
 
 void setup() {
@@ -146,7 +152,7 @@ void setup() {
       ",\"hidReady\":"+(tud_hid_ready()?"true":"false")+",\"reports\":"+String((uint32_t)completedReports)+"}");
   });
   server.on("/input",HTTP_POST,runInput);
-  server.on("/stop",HTTP_POST,[](){if(authorized()){stopKeys();reply(200,"{\"stopped\":true}");}});
+  server.on("/stop",HTTP_POST,[](){if(authorized()){stopKeys();emptyReply(200);}});
   server.onNotFound([](){reply(404,"{\"error\":\"Not found\"}");});
   server.begin();
   USB.connect();

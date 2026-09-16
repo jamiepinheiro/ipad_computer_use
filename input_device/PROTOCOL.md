@@ -32,13 +32,15 @@ At most 512 records; total waits at most 10 seconds; no unreleased buttons at
 the end. Only one batch runs at a time. The JavaScript codec additionally limits
 structured batches to 128 actions. Large deltas split into multiple reports.
 
-Responses: 202 accepted, 400 malformed, 403 wrong/missing secret, 409 busy.
-Acceptance does not mean execution completed: poll `/status` until `running`
-is false and `state` is `done`. A reboot can still make an in-flight result
-uncertain. Do not automatically retry. Firmware has a 70-second deadline and
-stops on USB unmount/suspend. HTTP handling may wait while a key/button is held;
-`/stop` is not a guaranteed instantaneous emergency stop. Unplug the tool when
-input release cannot be confirmed.
+`POST /input` returns 202 when the batch is queued. `POST /stop` returns 200
+when stop has been requested. Successful mutating responses have empty bodies.
+Malformed input returns 400, wrong or missing secrets return 403, and a running
+batch returns 409. A queued batch has not necessarily completed: poll `/status`
+until `running` is false and `state` is `done`. A reboot can still make an
+in-flight result uncertain. Do not automatically retry. Firmware has a 70-second
+deadline and stops on USB unmount/suspend. HTTP handling may wait while a
+key/button is held; `/stop` is not a guaranteed instantaneous emergency stop.
+Unplug the tool when input release cannot be confirmed.
 
 The protocol carries relative HID counts, not screenshot coordinates. Neither
 the firmware nor its codec knows the current iPad pointer position.

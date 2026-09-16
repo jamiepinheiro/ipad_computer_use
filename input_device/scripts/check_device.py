@@ -22,7 +22,8 @@ def request(path, body=None, secret=None):
     except urllib.error.HTTPError as error:
         response = error
     with response:
-        return response.status, json.load(response)
+        data = response.read()
+        return response.status, json.loads(data) if data else None
 
 
 code, status = request("/status")
