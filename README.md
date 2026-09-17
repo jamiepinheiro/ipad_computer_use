@@ -5,7 +5,7 @@ and forwards keyboard and mouse commands to a Seeed Studio XIAO RP2040, which
 plays them back as real USB HID input.
 
 USB-C iPhones are also supported; see [iPhone setup](#iphone-setup) for the
-additional AssistiveTouch configuration. The app is still named iPad Computer Use.
+additional AssistiveTouch configuration.
 
 ![iPad Computer Use demo](docs/demo.gif)
 
