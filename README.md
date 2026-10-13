@@ -184,6 +184,8 @@ Safari can open `http://172.31.254.1/status` but the app cannot reach the input
 tool, check the app's **Local Network** permission under **Settings > Privacy &
 Security > Local Network**.
 
+For Bluetooth control, use [oh-my-phone-use](https://github.com/getGate/oh-my-phone-use).
+
 ## Development
 
 ```sh
